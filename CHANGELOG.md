@@ -42,6 +42,10 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
   and not another system's snapshot identifier. `AS OF TIMESTAMP` is
   unaffected, since that does have equivalents.
 
+  feature is off silently falls through to the generic dialect. A request may
+  nest up to 1536 JSON levels, which clears the deepest AST the parser emits
+  and stays below the depth at which decoding would exhaust the module's
+  stack.
 
 ### Changed
 
